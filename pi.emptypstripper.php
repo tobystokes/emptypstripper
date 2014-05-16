@@ -6,11 +6,15 @@
 SuperGeekery Empty P Stripper
 a plug-in for ExpressionEngine 2
 by John Morton
-v1.01
+v1.02
 
 =====================================================
 
 Change log
+
+v. 1.0.2 (16MAY2014)
+
+Updated regex to also capture 'thin space' characters added by standard RTE in ee 2.8.
 
 v. 1.0.1 (08JUNE2013)
 
@@ -26,7 +30,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 $plugin_info = array(
 						'pi_name'			=> 'SuperGeekery Empty P Stripper',
-						'pi_version'		=> '1.0.1',
+						'pi_version'		=> '1.0.2',
 						'pi_author'			=> 'John Morton',
 						'pi_author_url'		=> 'http://supergeekery.com/',
 						'pi_description'	=> 'WYGWAM\'s empty P tags are a form of digital hoarding. Get rid of them.',
@@ -50,7 +54,7 @@ var $return_data = "";
 	      $str = $this->EE->TMPL->tagdata;
 	    }
 
-		$patterns = '{<p[^>]*>*>[\\n\\s]*(&nbsp;)*[\\n\\s]*<\\/p[^>]*>}';
+		$patterns = '{<p[^>]*>*>[\\n\\s]*(&nbsp;)*[\\n\\s]*(​)*<\\/p[^>]*>}';
 		$replacements = '';
 
 		$result = preg_replace($patterns, $replacements, $str);

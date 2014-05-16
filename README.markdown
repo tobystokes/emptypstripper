@@ -4,7 +4,7 @@ I use Pixel and Tonic's WYGWYM sometimes in my Expression Engine sites, but due 
 
 I took my SuperGeekery Tag Stripper and did a variation of it for this purpose. It's basically just a wrapper for preg_replace function, but it does the trick for me.
 
-## Installaion
+## Installation
 
 To install this plug in, make a directory by the name of "emptypstripper" and place the file "pi.emptypstripper.php" inside of it. 
 
